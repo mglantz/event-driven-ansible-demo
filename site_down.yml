@@ -1,0 +1,23 @@
+---
+- name: Site Down
+  hosts: all
+  gather_facts: false
+  become: true
+
+  tasks:
+    - debug:
+        msg: "Website is down!"
+
+    - name: Replace website
+      copy:
+       remote_src: yes
+       src: /tmp/index.html
+       dest: /var/www/html/
+       owner: apache
+       group: apache
+       mode: '0644'
+
+    - name: Restart apache webserver
+      service:
+        name: httpd
+        state: restarted
