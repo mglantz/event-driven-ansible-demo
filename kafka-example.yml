@@ -1,0 +1,19 @@
+---
+- name: Read messages from a kafka topic and act on them
+  hosts: all
+  ## Define our source for events
+  sources:   
+    - ansible.eda.kafka:
+        host: broker
+        port: 9092
+        topic: eda-topic
+        group_id:
+
+  ## Define the conditions we are looking for
+  rules:
+    - name: Say Hello
+      condition: event.message == "Ansible is cool"
+      ## Define the action we should take should the condition be met
+      action:
+        run_playbook:
+          name: say-what.yml
