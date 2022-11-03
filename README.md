@@ -12,6 +12,7 @@ git clone https://github.com/mglantz/even-driven-ansible
 2. Install ansible-rulebook
 ```
 pip3 install ansible-rulebook
+dnf install java-17-openjdk
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ```
 3. Create an inventory file to run against.
