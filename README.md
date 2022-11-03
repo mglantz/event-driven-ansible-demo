@@ -12,10 +12,19 @@ git clone https://github.com/mglantz/even-driven-ansible
 2. Install ansible-rulebook
 ```
 pip3 install ansible-rulebook
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ```
 3. Create an inventory file to run against.
-4. Run the website-automation example with:
+4. Run setup playbook
+```
+ansible-playbook -i inventory.yml setup-apache.yml
+```
+5. Run the website-automation example with:
 ```
 ansible-rulebook --rules website-automation.yml -i inventory.yml --verbose
+```
+6. Disable apache and see rulebook stdout
+```
+ansible-playbook -i inventory.yml setup-apache.yml -e httpd_state=stopped
 ```
 
