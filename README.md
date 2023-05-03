@@ -7,7 +7,7 @@ To try it out in a lab environment, simply follow the above link or run it in yo
 ## Try it out in your own environment
 1. Clone this repository
 ```
-git clone https://github.com/mglantz/event-driven-ansible
+git clone https://github.com/mglantz/event-driven-ansible-demo
 ```
 2. Install ansible-rulebook
 ```
@@ -18,6 +18,7 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 3. Create an inventory file to run against.
 4. Run setup playbook
 ```
+cd event-driven-ansible-demo
 ansible-playbook -i inventory.yml setup-apache.yml
 ```
 5. Run the website-automation example with:
