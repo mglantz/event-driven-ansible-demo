@@ -3,6 +3,8 @@ import time
 import os
 from typing import Any, Dict
 import aiohttp
+# Magnus Glantz, sudo@redhat.com, 2023
+# Example EDA plugin
 
 # Entrypoint from ansible-rulebook
 async def main(queue: asyncio.Queue, args: Dict[str, Any]):
