@@ -15,7 +15,7 @@ async def main(queue: asyncio.Queue, args: Dict[str, Any]):
 
     # Infinite loop
     while True:
-        # If the file exists, submit a dict which containers name of file and if it exists. We can use any of these things to create rules.
+        # If the file exists, submit a dict which contains name of file and if it exists. We can use any of these things to create rules.
         if os.path.exists(file_name):
             await queue.put(
                 dict(
