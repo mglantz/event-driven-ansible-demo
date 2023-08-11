@@ -14,12 +14,12 @@
       condition: event.url_check.status == "up"
     ## Define the action we should take should the condition be met
       action:
-        run_playbook:
-          name: site_up.yml
+        run_job_template:
+          name: 'eda - site up'
 
     - name: Web site is down
       condition: event.url_check.status == "down"
     ## Define the action we should take should the condition be met
       action:
         run_playbook:
-          name: site_down.yml
+          name: 'eda - site down'
