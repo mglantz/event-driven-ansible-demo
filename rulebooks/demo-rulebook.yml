@@ -13,12 +13,12 @@
       condition: event.demo.status == "exists"
     ## Define the action we should take should the condition be met
       action:
-        run_playbook:
-          name: file-exists.yml
+        run_job_template:
+          name: 'EDA - File exists'
 
     - name: File missing
       condition: event.demo.status == "missing"
     ## Define the action we should take should the condition be met
       action:
-        run_playbook:
-          name: file-missing.yml
+        run_job_template:
+          name: 'EDA - File missing'
