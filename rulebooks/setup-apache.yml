@@ -1,0 +1,17 @@
+---
+- name: Site Down
+  hosts: all
+  vars:
+    httpd_state: "started"
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Install apache
+      yum:
+        name: httpd
+
+    - name: Set state of apache webserver
+      service:
+        name: httpd
+        state: "{{ httpd_state }}"

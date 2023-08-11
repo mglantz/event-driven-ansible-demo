@@ -1,0 +1,20 @@
+---
+- name: Site Down
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - debug:
+        msg: "Website is down!"
+
+    - name: "Ensure firewall openings are in place."
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+        immediate: yes
+
+    - name: "Restart apache webserver"
+      service:
+        name: httpd
+        state: restarted
