@@ -17,6 +17,7 @@
         run_job_template:
           name: 'eda - site up'
           organization: 'Default'
+          filter: '*'
 
     - name: Web site is down
       condition: event.url_check.status == "down"
@@ -25,3 +26,4 @@
         run_job_template:
           name: 'eda - site down'
           organization: 'Default'
+          filter: '*'
