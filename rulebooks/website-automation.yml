@@ -5,7 +5,7 @@
   sources:
      - ansible.eda.url_check:
         urls:
-          - https://aap24.sudo.net
+          - https://www.google.com
         delay: 10
 
   rules:
