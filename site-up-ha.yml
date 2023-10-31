@@ -1,13 +1,13 @@
 ---
 - name: Detect which EDA server is active and set eda_activation accordingly
-  hosts: eda.sudo.net
+  hosts: localhost
   roles:
     - { role: mglantz.eda-ha, load_balancer_fqdn: "loadbalancer.sudo.net", eda_fqdn: "eda.sudo.net" }
 
 - name: Site is up
   hosts: all
   vars:
-    eda_activation: "{{ hostvars['eda.sudo.net']['eda_activation'] }}"
+    eda_activation: "{{ hostvars['localhost']['eda_activation'] }}"
   gather_facts: false
   tasks:
     - debug:
