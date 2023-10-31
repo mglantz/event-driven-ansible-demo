@@ -1,0 +1,13 @@
+---
+- name: Detect which EDA server is active and set eda_activation accordingly
+  hosts: localhost
+  roles:
+    - { role: mglantz.eda-ha, load_balancer_fqdn: "loadbalancer.sudo.net", eda_fqdn: "eda.sudo.net" }
+
+- name: Site is up
+  hosts: all
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: "All is up and well"
+      when: eda_activation
