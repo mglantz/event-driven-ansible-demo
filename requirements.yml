@@ -1,0 +1,4 @@
+---    
+- src: https://github.com/mglantz/eda-ha/
+  version: main
+  name: mglantz.eda-ha
