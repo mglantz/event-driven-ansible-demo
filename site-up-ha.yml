@@ -9,6 +9,7 @@
   vars:
     eda_activation: "{{ hostvars['eda.sudo.net']['eda_activation'] }}"
   gather_facts: false
+  tasks:
     - debug:
         msg: "All is up and well"
       when: eda_activation
