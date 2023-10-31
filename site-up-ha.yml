@@ -1,6 +1,6 @@
 ---
 - name: Detect which EDA server is active and set eda_activation accordingly
-  hosts: localhost
+  hosts: eda.sudo.net
   roles:
     - { role: mglantz.eda-ha, load_balancer_fqdn: "loadbalancer.sudo.net", eda_fqdn: "eda.sudo.net" }
 
