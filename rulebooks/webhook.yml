@@ -1,18 +1,15 @@
 ---
 - name: Listen for events on a webhook
- hosts: all
- ## Define our source for events
- sources:
-   - ansible.eda.webhook:
-       host: 0.0.0.0
-       port: 5000
- ## Define the conditions we are looking for
- rules:
-   - name: Run playbook
-     condition: 1 == 1
- ## Define the action we should take should the condition be met
-     action:
-       run_job_template:
-         name: 'Integration template'
-         organization: 'Default'
-         filter: '*'
+  hosts: all
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5000
+  rules:
+    - name: Run playbook
+      condition: 1 == 1
+      action:
+        run_job_template:
+          name: 'Integration template'
+          organization: 'Default'
+          filter: '*'
